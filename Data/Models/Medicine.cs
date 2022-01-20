@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MedFastreact.Data.Models
+namespace MedFas1.Data.Models
 {
     public class Medicine
     {

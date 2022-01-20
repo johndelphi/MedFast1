@@ -1,23 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MedFas1.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using Shop.Data;
+using MedFas1.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MedFastreact.Data
+namespace MedFast.Data
 {
     public class ShopContext : DbContext
     {
-        public ShopContext(DbContextOptions<ShopContext> options): base(options)
+        public ShopContext(DbContextOptions<ShopContext> options) :
+            base(options)
             {
 }
-        public DbSet<Shops> Shop { get; set; } = null!;
-//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-            //optionsBuilder.UseSqlServer("server =.; Database=MEDfastAPI; Intergrated Security=True");
-            //base.OnConfiguring(optionsBuilder);
-        //}
+        public DbSet<Shops> Shop { get; set; }
+        public DbSet<Medicine> Medicines { get; set; }
+
+
 
     }
 }
