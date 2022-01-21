@@ -3,6 +3,7 @@ using MedFas1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Configuration;
+using MedFast1.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +17,8 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "MedFast1", Version = "v1" });
 });
-   
-
+builder.Services.AddTransient<IShopRepository, ShopRepository>();
+builder.Services.AddTransient<IMedicineRepository, MedicineRepository>();
 
 var app = builder.Build();
 
@@ -26,7 +27,7 @@ if (builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
-   // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MedFast1 v1"));
+   app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MedFast1 v1"));
 }
 
 app.UseHttpsRedirection();
