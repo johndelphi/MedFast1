@@ -13,7 +13,7 @@ namespace MedFast.Data
         public DbSet<Shops> Shop { get; set; }
         public DbSet<Medicine> Medicines { get; set; }
 
-
+    //
 
     }
 }
