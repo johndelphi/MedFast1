@@ -7,7 +7,15 @@ namespace MedFas1.Data.Models
 {
     public class Medicine
     {
-        
+
+        private int HU;
+
+	public int FG
+	{
+		get { return HU;}
+		set { HU = value;}
+	}
+
         public string name { get; set; }
         public double price { get; set; }
         public int quantity { get; set; }
