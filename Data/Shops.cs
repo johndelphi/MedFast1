@@ -8,5 +8,6 @@
         public string town { get; set; } 
         public string locationDescription{get;set;}  
         public string Image { get; set; }
-    }
+    
+  }
 }
